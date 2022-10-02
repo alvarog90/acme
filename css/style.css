@@ -1,0 +1,271 @@
+/* antes validar los dos html en https://validator.w3.org/#validate_by_upload, luego hacer el css */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,400;0,600;0,700;1,500&display=swap');/* despues de: https://fonts.googleapis.com/css2?family=(expecificas escoges una fuente que te gusta de: https://fonts.google.com/  en este caso: Open+Sans y lo añades como en el proyecto )-Existen varias formas: https://www.w3docs.com/snippets/css/how-to-import-google-fonts-in-css-file.html */
+/* TIPOGRAFIA */
+body, textarea, input{ /*añadimos input para cuando se rellene los campos de contacto sea la misma letra*/
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: 16px;
+}
+header{
+   font-size: 2em;  /* em es el doble de la letra M del font-family:16px, inicial que se le aplico en este caso lo diplica a 16x2=32px  */
+    font-variant: small-caps;
+    text-align: center;/*mover el texto dentro de un blique, NO mueve bloques*/
+}
+   header h2{
+    letter-spacing: 2px;/*separacion entre letras*/
+   }
+ 
+nav{
+    font-size: 1.5em;
+}
+address{
+     line-height: 2; /*para separar la altura entre lineas por que estan muy juntas*/
+}
+li, p{
+    line-height: 1.5;/*para separar la altura entre lineas , politicas de provacidad*/
+}
+h1{
+    text-transform: uppercase;/*pone todo en mayusculas*/
+}
+
+/* ESQUEMA DE COLORES de aqui, se escoge uno y copias los codigos, https://www.colourlovers.com/palettes/most-loved/all-time/meta?page=2, https://paletton.com/#uid=73+1z0kmjeEetomhJijqHa2vZ5z
+#005f71 azul oscuro
+#40c0cb
+#f9f2e7 gris
+#aee239 verde claro
+#8fbe00 verde
+*/
+body{
+    color: #005f71;
+    background-color:#f9f2e7 ;
+}
+header, footer{
+    background-color:#005f71 ;
+    color: #f9f2e7 ;
+}
+nav{
+    background-color: #aee239;
+    color: #f9f2e7;
+}
+nav a {
+    color: #f9f2e7;
+    text-decoration: none;
+}
+nav ul ul{
+    background-color: #577300;
+}
+main{
+    background-color: #fff;
+}
+main a{
+    color:#577300 ;
+    text-decoration: none;
+}
+aside{
+    background-color: #fff;
+}
+footer a {
+    color:#aee239 ;
+    text-decoration: none;
+}
+a:hover{
+    font-weight: bold;
+}
+address{
+    font-weight: normal;
+    font-style: normal;
+}
+/*ESPACIOS*/
+body, header, nav, main, aside,footer, section {
+    margin: 1rem; /*em = font-family:16px - medida inicial que se le aplico al "body" 16x1=16px*/
+}
+header, main, aside,footer, section {
+    padding: 1rem;
+}
+.contenedor{
+    max-width: 1360px;/*para que se vea en pantallas antiguas y pequeñas, con esto le decimos que se adapte*/
+    margin: 0 auto; /*margen 0 por arriba y abajo y los costados se reparte automaticamente, es para centrear en pantallas pequeñas*/
+}
+/*BOTONES*/
+input[type="submit"], button{
+    font-size: 1.25em;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: #aee239;
+    color: #fff;
+    border: 2px solid #577300;
+    border-radius: 4px;
+    padding: 0.5em 3em;
+    cursor: pointer; /*interaccion, puntero hace la manito*/
+    transition: all 0.3s ease; /*la transicios la hace a "all=todo" en boton en 3s, ease=tramsisiom suavizada,
+    esta etiqueta se establece en la regla base y luego aplicas el cambio */ 
+}
+input[type="submit"]:hover, button:hover{ /*Este es el cambio, hover hace una transicion, en este caso de color*/
+    background-color: #577300;
+}
+/*MENU PRINCIPAL*/
+nav ul { /*hace referencia al nav y a cualquier ul que este dentro */
+    list-style-type: none; /*en el menu quitas los pintos de la lista "ul, li"*/
+    margin: 0; /*quitas margen y paging asignado anteriormente*/
+    padding: 0;
+}
+nav > ul{/*hace referencia al nav y al ul que esta inmediatamnete cerca*/
+    display: flex; /*es el contenedor y los hijos admiten esto*/
+    flex-wrap: wrap; /*pone uno al lado del otro dentro de ese contenedor*/
+    justify-content: space-around;/*en el momento que no ocupe lo ponga al lado */ 
+}
+nav > ul > li{
+    flex: 1;/*distribuye el espacio total en 1espacio para cada elemento "li", del 100% a cada uno le da 25%, de manera automatica */
+    text-align: center; /*el texto de los LI que de centredo */
+ }
+nav > ul > li > a{
+    display: block;  /*para que la etiqueta <a = enlace> ocupe todo el espacio y parrzca un boton*/
+    border-left: 2px solid #fff; /*le damos un border a la ezq, y en el proximo paso le quitasremos al primero elemento el borde de la izq por estetica*/
+    padding: 0.5em 0;
+    transition: all 0.3s ease;/*(cambio*)la transicios la hace a "all=todo" en boton en 3s,
+    esta etiqueta se establece en la regla base y luego aplicas el cambio */
+}
+nav > ul > li:first-child > a{/*aqui le quitamos al primer elemento el borde, hay q poner la misma ruta pero indicando que el primer "li" se hare algo, en este caso anulamos el borde de la izq*/
+    border-left: none;/*anular el borde de la izq*/
+}
+nav > ul > li > a:hover{ /*Este es el (cambio*), hover hace una transicion, en este caso de color*/
+    background-color: #577300;
+}
+a.activo{
+    background: rgba(0,0,0,0.3);/*rgba el 0.3 = se juega las semitransparencia*/
+}
+/*submenu*/
+nav > ul ul{/*esconderemos en SERVICIOS los submenus(exp,tram,cata)*/
+    /*display: none;*/ /*forma 1-ahora esta oculto el submenu, hay q hacer para que se vea*/
+    
+    max-height: 0;/*forma2*/
+    overflow: hidden;/*forma2*/
+    position: absolute;/*es para superponer cosas, luego de esta etiqueta siempre va top y left*/
+    top: 100%;/*no tiene sentido si antes no hay un "Position", como abajo le decimos que es positiobn relitive toma de referencia la esquina izq de ese contenedor, si no saldria arriba de todo donde el body*/
+    left: 0px;/*no tiene sentido si antes no hay un "Position"*/
+    width: 0;
+    transition: all 0.6s ease; /*forma2*/
+}
+/* para que el sub menum tome como refencia al list intems contendor siempre y cuando no esten el positios estatic, en este caso estan en posiscion relativa y eso es lo que hay que decirle */
+nav > ul li{ /*es para que el anterior position salga donde corresponde, dentro de su caja*/
+    position: relative;
+}
+nav > ul > li:hover > ul{ /*dandole li:hover, busca un "ul-subordinado para mostrarlo" y lo mostrara cuando el mause se ponga encima de esa etiqueta */
+    /*display: block;*/ /*Forma 1-mostrara los ocultos como bloque, esto es clave, no es animable por eso hacemos de la forma 2 */
+    max-height: 250px;/*forma2, es animable */
+    width: 100%; /*forma2*/
+}
+nav > ul ul li{
+    border-top: 1px solid #fff;
+    line-height: 2;
+}
+nav > ul ul li a{ /*para que la etiqueta ocupe todo el espacio*/
+    display: block;
+}
+/*QUADRICULA*/
+/*GRID CON FLEXBOX*/
+.fila{
+    display: flex;
+    flex-wrap: wrap; /*forza a que se ajusten los elementos*/
+    justify-content: space-around; /*alineacion en "x"*/
+}
+.col-1-6{
+    box-sizing: border-box;/*para que dentro de la anchura tome en cuenta y ya este dentro cuaquier ,pading y border, no incluye el margin*/
+    margin: 1rem; /*rem para que da igual donde estemos siempre sea los 16px*/
+    width: calc(100% / 6 - 2rem);/*calc sera 1 sexto del espacio - 100%/6=16.76, 2rem = aqui incluimos el margin izq y der*/
+}
+.col-1-5{
+    box-sizing: border-box;
+    margin: 1rem; 
+    width: calc(100% / 5 - 2rem);
+}
+.col-1-4{
+    box-sizing: border-box;
+    margin: 1rem; 
+    width: calc(100% / 4 - 2rem);
+}
+.col-3-4{
+    box-sizing: border-box;
+    margin: 1rem; 
+    width: calc(100% / 1.334 - 2rem);
+}
+.col-1-3{
+    box-sizing: border-box;
+    margin: 1rem; 
+    width: calc(100% / 3 - 2rem);
+}
+.col-2-3{
+    box-sizing: border-box;
+    margin: 1rem; 
+    width: calc(100% / 1.5 - 2rem);
+}
+.col-1-1{
+    box-sizing: border-box;
+    margin: 1rem; 
+    width: calc(100% / 1 - 2rem);
+}
+/*FORMULARIOS*//*le damos propiedades de bloque para esto lo volvemos bloque *//*para los que tienen [for] les afecte , */
+label[for]{
+    display: block;
+    text-align: right;
+} /*para añadir 2 puntos en cada label con css,::after, manual pag 35, la idea es que con css se puede añadir contenidos */
+label[for]::after{/*after es un pseudo elemento*/
+    content: ":";
+}
+/*input[type="text"], input[type="email, textarea"],,, forma 1 y el de abajo forma 2*/ 
+form div input, form div textarea{ /*forma 2*/
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5em 0.75em;/*arriba abajo, x y*/
+    border: 2px solid #005f71; /*color del borde de las cajas*/
+    border-radius: 0.5em; /*darle curvas a las cajas*/
+}/*es to es para que la caja cuando llenemos datos no se vea de color negro */
+form div input:focus-visible, form div textarea:focus-visible{
+    border: 2px solid #005f71;
+    outline: 2px solid #40c0cb;
+}
+#aviso_legal{ 
+    font-size: 0.75em;
+    height: 3em;
+    overflow: hidden;/*para que sea desplegable cuado pasas el puntero*/
+    cursor: help; /*para que salga el interrogante*/
+}
+#aviso_legal:hover{
+    height: auto; /*va de la mano del overflow*/
+}
+/*RESPONSIVE*/
+/* media-queries*/ /*estamos copiando las rutas y contradiciendo los efectos*/
+@media screen and (max-width: 840px) {
+    nav > ul {
+        display: block;
+    }
+    nav > ul > li > a {
+        border: none;
+        border-top: 2px solid #fff;
+    }
+    nav > ul ul {
+        position: static;
+        width: auto !important;
+        max-height: none;
+        margin: 0 2em;
+    }
+    .fila{
+        flex-direction: column;
+    }
+    .col-1-1, .col-1-2, .col-1-3, .col-1-4, .col-1-5, .col-1-6, .col-2-3, .col-3-4{
+        width: auto;
+        
+    }
+    label[for], footer{
+        text-align: center;
+    }
+    #aviso_legal{
+        height: auto;
+    }
+}
+@media screen and (max-width: 600px) {
+    aside{
+        display: none;
+    } 
+}
