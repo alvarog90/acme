@@ -1,0 +1,246 @@
+<!DOCTYPE html> <!-- le indica al navegador que codigo se utiliza acontinuacion (ultimo version de html) -->
+<html lang="es">
+<!-- atributo lang (idioma del contenido-es=español) -->
+
+<head>
+    <!-- informacion referencial del documento -->
+    <meta charset="UTF-8"><!-- le dice al navegador que utiliza estos caracteres UTF8 es el estandar -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- referencia a como a de interpretar el contenido,compatibilidad con navegadores anteriores -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- le dice al navegador que no escale y yo con los qrs adaptare el tamaño a una pantalla -->
+    <title>formulario de contacto - ACME co.</title>
+    <!-- frase descriptiva de que va el contenido, esto es lo que buscan los buscadores, google utiliza para posicionar, google ve las 60 primeros caracteres // titulo de la seccion - titulo del sitio -->
+    <meta name="description" content="Pagina de contacto de nuestro sitio web.">
+    <!-- un resumen de lo q es el documento, google ve las 160 primeros caracteres-->
+    <!-- indexar es leer para posicionar -->
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <!-- Standard for most desktop browsers -->
+    <link rel="icon" type="image/png" href="favicon-128x128.png" sizes="128x128" />
+    <!-- Chrome Web Store icon & Small Windows 8 Star Screen Icon -->
+    <link rel="icon" type="image/png" href="favicon-152x152.png" sizes="152x152" />
+    <!-- iPad touch icon (Change for iOS 7: up from 144x144) -->
+    <link rel="icon" type="image/png" href="favicon-167x167.png" sizes="167x167" />
+    <!-- iPad Retina touch icon (change for iOS 10: up from 152x152, not in action. iOS 10 will use 152x152) -->
+    <link rel="icon" type="image/png" href="favicon-180x180.png" sizes="180x180" /> <!-- iPhone Retina -->
+    <link rel="icon" type="image/png" href="favicon-192x192.png" sizes="192x192" />
+    <!-- Google Developer Web App Manifest Recommendation -->
+    <link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+    <!-- Chrome for Android home screen icon -->
+
+    <link rel="stylesheet" href="css/all.min.css">
+    <!--este se crea primero, esta https://fontawesome.com/download, descargar free for web, de la carpeta css solo extraer "all.min.css" y pegarla en la carpeta "css" al lado de "styles.css", la carpeta webfonts pegar al lado de "index" y de la carpeta "css" -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <header>
+            <h2>ACME co.</h2>
+            <p>Servicios corporativos</p>
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Inicio</a>
+                </li>
+                <li>
+                    <a href="#">Quienes somos</a>
+                </li>
+                <li>
+                    <a href="#">Servicios</a>
+                    <ul>
+                        <li>
+                            <a href="#">Explosivos</a>
+                        </li>
+                        <li>
+                            <a href="#">Trampas</a>
+                        </li>
+                        <li>
+                            <a href="#">Catapultas</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="activo">Contacto</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="fila">
+            <main class="col-2-3">
+                <h1>Contacto</h1>
+                <p style="text-align: center;">
+                    <i class="fa-solid fa-triangle-exclamation fa-3x"></i>
+                </p>
+                <p>
+                    Se ha producido un error en el envio. Por favor, vuelva a intentarlo.<!--es un copia del index borrando alguna section y añadiendo este nuevo mensaje si es NO es correcto -->
+                </p>
+                <p style="text-align: center;">
+                    <a href="index.html#seccion_contacto">volver al formulario </a>
+                </p>
+
+                <section>
+                    <h3>visita nuestras oficinas</h3>
+                    <address>
+                        Jauma Balmes , 37 <br>
+                        08301 Mataró <br>
+                        <i class="fa-solid fa-phone fa-2x"></i> <a href="tel:+34937555080">937 555 080</a> <br>
+                        <!--ambos son de https://fontawesome.com/icons/phone?s=solid&f=classic-->
+                        <i class="fa-solid fa-mobile-retro fa-2x"></i><a href="tel:+34637037150">637 037 150</a> <br>
+                    </address>
+                    <p>
+                        <!--para insertar un mapa de google maps-direccion, compartir, insertar un mapa, MEDIANO y copiar el <iframe> y aumentamos width="100%"(sera el ancho solo de esa etiqueta, no el totak)  -->
+                            <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2986.5387361879652!2d2.4472284!3d41.5359312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4b527660c5fd1%3A0x8bbc4f8b11aae522!2sCarrer%20de%20Jaume%20Balmes%2C%2037%2C%2008301%20Matar%C3%B3%2C%20Barcelona!5e0!3m2!1ses!2ses!4v1663252283793!5m2!1ses!2ses"
+                            width="600" height="450" style="border:0;width:100%;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </p>
+                </section>
+                <section>
+                    <h3>contacta con nosotros</h3>
+                    <form action="" method="">
+                        <div class="fila">
+                            <div class="col-1-4">
+                                <label for="id_nombre">Nombre</label>
+                            </div> 
+                            <div class="col-3-4">
+                                <input id="id_nombre" type="text" required placeholder="Presentate" name="campo_nombre"maxlength="50">
+                            </div>
+                        </div>
+                        <div class="fila">
+                            <div class="col-1-4">
+                                <label for="id_email">Email</label>
+                            </div>
+                            <div class="col-3-4">
+                                <input id="id_email" type="email" required name="campo_email" maxlength="50">
+                            </div>
+                        </div>
+                        <div class="fila">
+                            <div class="col-1-4">
+                                <label for="id_asunto">Asunto</label>
+                            </div>
+                            <div class="col-3-4">
+                                <input id="id_asunto" type="text" required name="campo_asunto" maxlength="150">
+                            </div>
+                        </div>
+                        <div class="fila">
+                            <div class="col-1-4"> <!--id es para el navegador y el name para q  uern procece el formulario (php), este div es diferente a los demas por el "[for]" esto ayudara a identificarlo mejor en el css-->
+                                <label for="id_mensaje">Mensaje</label>
+                            </div>
+                            <div class="col-3-4">
+                                <textarea name="campo_mensaje" id="id_mensaje" maxlength="500"></textarea>
+                            </div>
+                        </div>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="campo_privacidad" value="Si" required>
+                                He leido y acepto la politica de campo_privacidad <a href="politica-privacidad.html"
+                                    target="_blank">política de privacidad</a>
+                                <!--esta enlazando al segundo html-->
+                            </label>
+                        </p>
+                        <div id="aviso_legal">
+                            <!--esto es del block de notas que descargamos esta junto carpeta proyecto-->
+                            <p>*Información básica sobre Protección de Datos RGPD. Responsable: <em>NOMBRE EMPRESA</em>
+                            </p>
+                            <p><strong>Finalidades</strong>: enviar la información solicitada. Enviar emails de
+                                marketing.
+                            </p>
+                            <p><strong>Legitimación</strong>: por consentimiento del interesado.</p>
+                            <p><strong>Destinatarios</strong>: no se comunicarán datos a terceros, salvo obligación
+                                legal.
+                            </p>
+                            <p><strong>Derechos</strong>: tiene derecho a acceder, rectificar y suprimir los datos, así
+                                como
+                                otros derechos, como se explica en la información adicional.</p>
+                            <p><strong>Ubicación</strong>: puede consultar la información adicional y detallada sobre
+                                Protección de Datos solicitándoselo a nuestro personal, puede solicitar copia al correo
+                                electrónico <em>info@nombre-empresa.com</em></p>
+                        </div>
+                        <p>
+                            <button type="submit"> Enviar </button>
+                        </p>
+                    </form>
+                </section>
+            </main>
+            <aside class="col-1-3">
+                <p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/o3CodExRlbo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;"></iframe> <!--style="width:100%;", hayq aumnetar esto para que se quede dentro la caja -->
+                </p>
+            </aside>
+        </div>
+        <footer class="fila">
+            <section class="col-1-2">
+                <!--section para de localizacion nuestro contacto -->
+                <h4>Mestras oficinas</h4>
+                <address>
+                    Jauma Balmes , 37 <br>
+                    08301 Mataró <br>
+                    <i class="fa-solid fa-phone fa-2x"></i> <a href="tel:+34937555080">937 555 080</a> <br>
+                    <i class="fa-solid fa-mobile-retro fa-2x"></i><a href="tel:+34637037150">637 037 150</a> <br>
+                </address>
+            </section>
+            <section class="col-1-2">
+                <!--para las redes sociales-->
+                <h4>Siguenos!</h4>
+                <a href="#" title="Linkedin">
+                    <!--title , para dar mas informacion de que se trata el ipervinculo-->
+                    <i class="fa-brands fa-linkedin-in fa-2x"></i>
+                    <!--codigo que se saca de fontawesome.com/icons/linkedin-in?s=&f=brands-->
+                    <span class="fa-stack fa-2x">
+                        <!--ejemplo de abajo pondremos linkedin sobrepuesto -->
+                        <i class="fa-solid fa-circle fa-stack-2x"></i>
+                        <i class="fa-solid fa-brands fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+                <a href="maito:omar.drg@outlook.es" title="Email">
+                    <!--title , para dar mas informacion de que se trata el ipervinculo-->
+                    <i class="fa-solid fa-envelope-open-text fa-2x"></i>
+                    <!--codigo que se saca de https://fontawesome.com/icons/envelope-open-text?s=solid&f=classic-->
+                    <span class="fa-stack fa-2x">
+                        <!--aqui ya esta dentro de la etiqueta <a>, asi marca de colort azul -->
+                        <i class="fa-solid fa-circle fa-stack-2x"></i>
+                        <i class="fa-solid fa-envelope-open-text fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+                <a href="instagram" title="instagram">
+                    <!--title , para dar mas informacion de que se trata el ipervinculo-->
+                    <span class="fa-stack fa-xl">
+                        <!--aqui ya esta dentro de la etiqueta <a>, asi marca de colort azul -->
+                        <i class="fa-solid fa-circle fa-stack-2x"></i>
+                        <i class="fa-solid fa-brands fa-instagram fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+
+                <a href="facebook" title="facebook">
+                    <!--title , para dar mas informacion de que se trata el ipervinculo-->
+                    <span class="fa-stack fa-xl">
+                        <!--aqui ya esta dentro de la etiqueta <a>, asi marca de colort azul -->
+                        <i class="fa-solid fa-circle fa-stack-2x"></i>
+                        <i class="fa-solid fa-brands fa-facebook fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+                <span class="fa-stack fa-2x">
+                    <!--https://fontawesome.com/docs/web/style/stack ,"Staking Iconos"copiado de ese link , sirve para poner un icono sobre otro, en este caso un icono redondo, abajo el ejemplo-->
+                    <i class="fa-solid fa-circle fa-stack-2x"></i>
+                    <i class="fa-solid fa-flag fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="fa-stack fa-2x">
+                    <!--ejemplo de la cartita en un fonfo redondo, solo copiar, fa-envelope-open-text,(del sobre) y reemplazarlo-->
+                    <i class="fa-solid fa-circle fa-stack-2x"></i>
+                    <i class="fa-solid fa-envelope-open-text fa-stack-1x fa-inverse"></i>
+                    <!--son de color negro porque no estan dentro de la etiqueta <a>-->
+                </span>
+                <span class="fa-stack fa-xl">
+                    <!--fa-2xcambiar a "fa-xl" para cambiar el tamaño-->
+                    <i class="fa-solid fa-circle fa-stack-2x"></i>
+                    <i class="fa-solid fa-envelope-open-text fa-stack-1x fa-inverse"></i>
+                    <!--son de color negro porque no estan dentro de la etiqueta <a>-->
+                </span>
+            </section>
+        </footer>
+    </div>
+</body>
+
+</html>
